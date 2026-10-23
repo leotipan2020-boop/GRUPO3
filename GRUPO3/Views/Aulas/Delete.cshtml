@@ -1,0 +1,36 @@
+﻿@model GRUPO3.Models.Aula
+
+@{
+    ViewData["Title"] = "Eliminar Aula";
+}
+
+<h1>Eliminar Aula</h1>
+
+<h3>¿Está seguro de eliminar esta aula?</h3>
+
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">Número</dt>
+    <dd class="col-sm-9">@Model.Numero</dd>
+
+    <dt class="col-sm-3">Capacidad</dt>
+    <dd class="col-sm-9">@Model.Capacidad</dd>
+
+    <dt class="col-sm-3">Ubicación</dt>
+    <dd class="col-sm-9">@Model.Ubicacion</dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">
+        Eliminar
+    </button>
+
+    <a asp-action="Index" class="btn btn-secondary">
+        Cancelar
+    </a>
+
+</form>

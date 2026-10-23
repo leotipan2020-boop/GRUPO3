@@ -1,0 +1,44 @@
+﻿@model IEnumerable<GRUPO3.Models.Aula>
+
+@{
+    ViewData["Title"] = "Aulas";
+}
+
+<h1>Gestión de Aulas</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">
+        Registrar nueva aula
+    </a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Número</th>
+            <th>Capacidad</th>
+            <th>Ubicación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var aula in Model)
+        {
+            <tr>
+                <td>@aula.Numero</td>
+                <td>@aula.Capacidad</td>
+                <td>@aula.Ubicacion</td>
+                <td>
+                    <a asp-action="Details"
+                       asp-route-id="@aula.Id">Detalles</a> |
+
+                    <a asp-action="Edit"
+                       asp-route-id="@aula.Id">Editar</a> |
+
+                    <a asp-action="Delete"
+                       asp-route-id="@aula.Id">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
