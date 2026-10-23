@@ -12,5 +12,6 @@ namespace GRUPO3.Data
         }
 
         public DbSet<Aula> Aulas { get; set; } = null!;
+        public DbSet<Estudiante> Estudiantes { get; set; } = null!;
     }
 }
