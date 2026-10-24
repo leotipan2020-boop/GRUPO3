@@ -1,13 +1,13 @@
 @model IEnumerable<GRUPO3.Models.Estudiante>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Estudiantes";
 }
 
 <h1>Gestión de Estudiantes</h1>
 
 <p>
-    <a asp-action="Create">Registra nuevo estudiante</a>
+    <a asp-action="Create" class="btn btn-primary">Registra nuevo estudiante</a>
 </p>
 <table class="table">
     <thead>
@@ -20,6 +20,9 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CedulaIdentidad)
+            </th>
+            <th>
+                Accion
             </th>
             <th></th>
         </tr>
@@ -37,9 +40,9 @@
                 @Html.DisplayFor(model => item.CedulaIdentidad)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalles</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Eliminar</a>
             </td>
         </tr>
 }
