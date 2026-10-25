@@ -71,6 +71,30 @@ namespace GRUPO3.Migrations
                     b.ToTable("Estudiantes");
                 });
 
+            modelBuilder.Entity("GRUPO3.Models.Libro", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AnioPublicacion")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Autor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Libros");
+                });
+
             modelBuilder.Entity("GRUPO3.Models.Maestro", b =>
                 {
                     b.Property<int>("Id")
