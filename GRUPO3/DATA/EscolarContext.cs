@@ -1,4 +1,5 @@
-﻿using GRUPO3.Models;
+﻿
+using GRUPO3.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace GRUPO3.Data
@@ -18,5 +19,7 @@ namespace GRUPO3.Data
         public DbSet<Maestro> Maestros { get; set; } = null!;
 
         public DbSet<Libro> Libros { get; set; } = null!;
+
+        public DbSet<Asignatura> Asignaturas { get; set; } = null!;
     }
 }
